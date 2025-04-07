@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Detector de AdBlock</title>
+  <style>
+    .ad-banner {
+      height: 1px;
+      width: 1px;
+      position: absolute;
+      left: -9999px;
+    }
+  </style>
+</head>
+<body>
+  <div id="adblock-message" style="display: none; color: red;">
+    Parece que você está usando um AdBlock!
+  </div>
+
+  <div class="ad-banner" id="test-ad">Publicidade</div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const ad = document.getElementById('test-ad');
+      const adblockMsg = document.getElementById('adblock-message');
+
+      // Se o elemento for bloqueado (não renderizado ou com height == 0)
+      if (!ad || ad.offsetHeight === 0) {
+        adblockMsg.style.display = 'block';
+      }
+    });
+  </script>
+  <h1>ola</h1>
+  <p>teste 1</p>
+  pk
+</body>
+</html>
